@@ -15,7 +15,8 @@ resource "aws_instance" "app_server" {
   instance_type = var.server_type
 
   tags = {
-    Name = var.server_name
+    Environment = var.environment
+    Name        = var.server_name
   }
 
 
