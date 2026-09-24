@@ -12,10 +12,10 @@ data "aws_ami" "ubuntu" { //data goes and fetch the  recent ami version
 
 resource "aws_instance" "app_server" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t3.micro"
+  instance_type = var.server_type
 
   tags = {
-    Name = "Fenec-dev"
+    Name = var.server_name
   }
 
 
